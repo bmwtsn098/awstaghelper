@@ -1,19 +1,12 @@
 # Namespaced project name that the target belongs to
-project: bmwtsn098/awstaghelper-test
+project: awstaghelper
 
 # Target name (should be unique within the project)
-target: awstaghelper-test
+target: awstaghelper
 
-# Base image to run the binary in.
-image: ghcr.io/bmwtsn098/awstaghelper:latest
-duration: 300
 # List of commands used to test the target
 cmds:
 
     # Command used to start the target, "@@" is the input file
     # (when "@@" is omitted Mayhem defaults to stdin inputs)
     - cmd: ./awstaghelper ec2 tag-ec2 --filename @@ --profile main
-    - cmd: ./awstaghelper ec2 tag-sg --filename @@ --profile main
-    - cmd: ./awstaghelper rds tag-rds --filename @@ --profile main
-    - cmd: ./awstaghelper lambda tag-lambda --filename @@ --profile main
-    - cmd: ./awstaghelper s3 tag-s3 --filename @@ --profile main
